@@ -1,0 +1,34 @@
+@startuml
+title Git Workflow
+
+class Developer {
+  -name: string
+  -email: string
+  +commitChanges(): void
+}
+
+class Branch {
+  -name: string
+  +merge(otherBranch: Branch): void
+}
+
+class Repository {
+  -name: string
+  -branches: list<Branch>
+  +addBranch(branchName: string): Branch
+  +removeBranch(branchName: string): void
+}
+
+class Git {
+  +commitChanges(repository: Repository, developer: Developer): void
+  +createBranch(repository: Repository, branchName: string): Branch
+  +deleteBranch(repository: Repository, branchName: string): void
+}
+
+Developer -> Repository : commitChanges()
+Branch -> Repository : merge()
+Repository -> Git : addBranch()
+Repository -> Git : removeBranch()
+Git -> Repository : createBranch()
+Git -> Repository : deleteBranch()
+@enduml
