@@ -1,0 +1,11 @@
+Git provides several ways to undo changes, depending on the type of change you want to undo and whether or not the changes have been committed. Here's an overview of two common ways to undo changes in Git:
+
+    git reset: This command is used to move the current branch pointer to a different commit. You can use git reset to undo changes that haven't been committed yet. There are several ways to use git reset, depending on your needs:
+
+    git reset --soft: This option moves the branch pointer to a different commit, but leaves the changes in the staging area. This means that you can re-commit the changes if you want to.
+    git reset --mixed: This option is the default behavior of git reset if no option is specified. It moves the branch pointer to a different commit and clears the staging area, but leaves the changes in your working directory. This means that you can modify the changes and stage them again before committing.
+    git reset --hard: This option moves the branch pointer to a different commit and completely discards any changes in the staging area and working directory. This means that any changes you made will be lost permanently.
+
+    git revert: This command creates a new commit that undoes the changes made by a previous commit. You can use git revert to undo changes that have already been committed. When you run git revert, Git creates a new commit that contains the opposite changes of the commit you're reverting. This allows you to keep a record of the changes you made, while also undoing the changes.
+
+It's important to note that both git reset and git revert can be used to undo changes, but they work in different ways and have different consequences. You should choose the method that best fits your needs and be careful when using these commands, as they can be destructive if used improperly.
