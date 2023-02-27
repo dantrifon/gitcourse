@@ -1,0 +1,18 @@
+@startuml
+title Distributed Version Control (DVC) Flow
+
+actor User
+
+User -> LocalRepo : Commit changes
+
+LocalRepo -> User : Changes committed
+
+User -> RemoteRepo : Push changes
+
+RemoteRepo -> User : Changes pushed
+
+User -> LocalRepo : Pull changes
+
+LocalRepo -> User : Changes pulled
+
+@enduml
